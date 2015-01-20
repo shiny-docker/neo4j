@@ -31,3 +31,5 @@ ADD conf/neo4j-wrapper.conf ${neohome}/conf/neo4j-wrapper.conf
 ADD conf/neo4j.conf /etc/security/limits.d/neo4j.conf
 
 RUN chmod +x /etc/init.d/neo4j
+
+CMD neo4j console
