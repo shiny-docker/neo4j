@@ -24,6 +24,8 @@ RUN \
 	chown -R neo4j:neo4j ${neohome} && \
 	chown -R neo4j:neo4j ${neolib}
 
+VOLUME ${neolib}
+
 ADD etc/init.d/neo4j /etc/init.d/neo4j
 ADD conf/neo4j-server.properties ${neohome}/conf/neo4j-server.properties
 ADD conf/neo4j.properties ${neohome}/conf/neo4j.properties
@@ -32,4 +34,7 @@ ADD conf/neo4j.conf /etc/security/limits.d/neo4j.conf
 
 RUN chmod +x /etc/init.d/neo4j
 
+USER neo4j
+
+#run in foreground
 CMD neo4j console
