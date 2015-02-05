@@ -36,5 +36,6 @@ RUN chmod +x /etc/init.d/neo4j
 
 USER neo4j
 
+EXPOSE 7474
 #run in foreground
 CMD echo "neo4j data container"
